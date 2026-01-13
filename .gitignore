@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.env.local
+
+# VIPE specific
+vipe_results/
+*.mp4
+*.avi
+*.mov
+*.mkv
+assets/examples/
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# COLMAP outputs
+colmap_outputs/
+*.bin
+*.txt.gz
