@@ -212,6 +212,23 @@ pip install --no-build-isolation --force-reinstall -e .
 - **Technical Paper**: [ViPE Whitepaper](https://research.nvidia.com/labs/toronto-ai/vipe/assets/paper.pdf)
 - **Datasets**: Available on [Hugging Face](https://huggingface.co/nvidia)
 
+## Security Considerations
+
+**Important**: This repository includes the Ray distributed computing library (required by ViPE), which has known security vulnerabilities:
+
+1. **Token Authentication Issue**: New token authentication is disabled by default (affects all versions ≤ 2.52.0)
+2. **Jobs Submission API**: Arbitrary code execution vulnerability (affects all versions ≤ 2.49.2, no patch available)
+3. **DNS Rebinding (Mitigated)**: RCE via Safari & Firefox browsers - patched in version 2.52.0+
+
+**Recommendations**:
+- **Do not expose Ray services to untrusted networks or the public internet**
+- Use Ray only in isolated, trusted environments
+- Enable network security controls (firewall rules, network isolation)
+- If using Ray's dashboard or API, implement additional authentication layers
+- Monitor Ray's security advisories: https://github.com/ray-project/ray/security
+
+This repository uses Ray 2.53.0 (latest available), which mitigates the DNS rebinding issue, but other vulnerabilities remain unpatched. Use with caution in production environments.
+
 ## License
 
 ViPE is released under the Apache 2.0 License. This demo repository follows the same license. Note that ViPE downloads additional third-party models and software with their own licenses - review those before use.

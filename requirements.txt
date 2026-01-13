@@ -37,7 +37,9 @@ gdown==5.2.0
 requests==2.28.1
 
 # Distributed computing
-ray==2.42.1
+# Note: Ray has known security vulnerabilities. Use with caution in production.
+# Updated to latest version to mitigate some issues, but some vulnerabilities remain unpatched.
+ray==2.53.0
 
 # OpenEXR support
 openexr==3.2.4
